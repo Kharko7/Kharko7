@@ -6,6 +6,10 @@
 ul li {
 	list-style: none;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
 .app-wrapper {
 	width: 1200px;
 	margin: 0 auto;
@@ -23,45 +27,6 @@ ul li {
 
 /* /////////////////////////////////////////////////// */
 
-.header {
-	grid-area: header;
-	background-color: #aaa;
-}
-.header__logo {
-	padding-left: 10px;
-}
-.header__logo img {
-	height: 60px;
-}
-
 /* /////////////////////////////////////////////////// */
 
-.nav {
-	grid-area: nav;
-	background-color: red;
-}
-.nav__list {
-	padding-left: 20px;
-}
-.nav__list li {
-	transition: all 0.5s ease 0s;
-	margin: 10px 0px 10px 0px;
-}
-.nav__list li:hover {
-	transform: scale(1.1);
-}
-.nav__link {
-	font-size: 20px;
-	text-decoration: none;
-	color: black;
-}
-.nav__link:hover {
-	color: white;
-}
-
 /* /////////////////////////////////////////////////// */
-
-.content {
-	grid-area: content;
-	background-color: blue;
-}
