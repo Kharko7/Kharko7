@@ -9,7 +9,7 @@ const Post = (props) => {
 		<div className={classes.post}>
 			<img src="https://v.od.ua/uploads/92/logo.png" />
 			{props.message} {props.likes}
-		</div>
+		</div >
 	)
 }
 

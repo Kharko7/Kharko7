@@ -12,6 +12,7 @@
 .nav__list li:hover {
 	transform: scale(1.1);
 }
+
 .nav__link {
 	font-size: 20px;
 	text-decoration: none;
@@ -20,6 +21,9 @@
 }
 .nav__link:hover {
 	color: white;
+}
+.nav__link.itt {
+	color: gold;
 }
 .button {
 	margin-top: 20px;
@@ -30,6 +34,6 @@
 	line-height: 30px;
 	background-color: rgb(35, 35, 120);
 }
-.button._active {
+.button {
 	text-align: center;
 }

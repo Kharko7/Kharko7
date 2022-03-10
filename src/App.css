@@ -24,7 +24,10 @@ a {
 	grid-template-columns: 10% 1fr;
 	grid-gap: 10px;
 }
-
+.app-wrapper-content {
+	grid-area: content;
+	background-color: blue;
+}
 /* /////////////////////////////////////////////////// */
 
 /* /////////////////////////////////////////////////// */
