@@ -1,0 +1,16 @@
+.dialogs__list {
+	padding: 10px;
+	background-color: indigo;
+}
+
+.dialogs__list li {
+	margin: 0px 0px 15px 0px;
+}
+
+.dialogs__link {
+	font-size: 22px;
+	color: rgb(247, 247, 247);
+}
+.dialogs__link.active {
+	color: rgb(255, 4, 4);
+}

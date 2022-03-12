@@ -22,7 +22,7 @@
 .nav__link:hover {
 	color: white;
 }
-.nav__link.itt {
+.nav__link.active {
 	color: gold;
 }
 .button {
