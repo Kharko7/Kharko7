@@ -1,5 +1,5 @@
-import { renderEntireTree } from "../render";
 
+let renderEntireTree = () => { };
 
 
 const state = {
@@ -61,17 +61,23 @@ const state = {
 
 
 
+////////////////////функція яка відображає текст в TEXAREA в profile//////////////////////////////////////
 
 export const addTextPost = (newText) => {
 	state.profilePage.showProfileText.texareaValue = newText;
 	renderEntireTree(state);
 }
+////////////////////функція яка відображає текст в TEXAREA в profile//////////////////////////////////////
+
+////////////////////функція яка відображає текст в TEXAREA в dialogs//////////////////////////////////////
 
 export let showMessageDialog = (newText) => {
 	state.dialogsPage.messageTextDate.texareaValue = newText;
 	renderEntireTree(state);
 }
+////////////////////функція яка відображає текст в TEXAREA в dialogs//////////////////////////////////////
 
+///////////////////функція яка добавляє елемент(обєкт в state) на екран /////////////////////////////////////
 
 export let addPost = (messagePost) => {
 	let newPost = { id: 5, message: messagePost + " ", likes: 234, };
@@ -79,7 +85,12 @@ export let addPost = (messagePost) => {
 	state.profilePage.showProfileText.texareaValue = '';
 	renderEntireTree(state);
 }
+////////////////////функція яка добавляє елемент(обєкт в state) на екран /////////////////////////////////////
 
-
+////////////////////визов функцціх яка буде оновлювати state//////////////////////////////////////
+export const subscribe = (observe) => {
+	renderEntireTree = observe;
+}
+////////////////////визов функцціх яка буде оновлювати state//////////////////////////////////////
 
 export default state;
