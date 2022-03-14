@@ -3,16 +3,23 @@ import classes from "./MyPosts.module.css"
 import Post from './Post/Post';
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+	let getValueText = React.createRef();
+	let addPost = () => {
+		props.addPost(getValueText.current.value)
+
+	}
+	let showPostChangetext = () => {
+		props.addTextPost(getValueText.current.value)
+	}
 	return (
-		<div>
+		<div className={classes.myPost}>
 			My post
 			<div>
-				<textarea></textarea>
-				<button>Add post</button>
+				<textarea onChange={showPostChangetext} value={props.profilePage.showProfileText.texareaValue} ref={getValueText} />
+				<button onClick={addPost}>Add post</button>
 			</div>
-			<Post likes="123" message="Я тут " />
-			<Post likes="12" message="Привіт ти як" />
+			<Post profilePostData={props.profilePage.postData} />
 
 		</div>
 

@@ -1,12 +1,15 @@
+import { renderEntireTree } from "../render";
+
+
 
 const state = {
-	profilePage: {
+	dialogsPage: {
 		dialogsData: [
-			{ name: 'Andrey', id: '/dialogs/1', },
-			{ name: 'Dnitry', id: '/dialogs/2', },
-			{ name: 'Sasha', id: '/dialogs/3', },
-			{ name: 'Valera', id: '/dialogs/4', },
-			{ name: 'Vira', id: '/dialogs/5', },
+			{ name: 'Andrey', id: '/1', },
+			{ name: 'Dnitry', id: '/2', },
+			{ name: 'Sasha', id: '/3', },
+			{ name: 'Valera', id: '/4', },
+			{ name: 'Vira', id: '/5', },
 		],
 		messagesData: [
 			{ message: "hi" },
@@ -15,6 +18,9 @@ const state = {
 			{ message: "blablalba" },
 			{ message: "yoyoyo" }
 		],
+		messageTextDate: {
+			texareaValue: ''
+		}
 	},
 	navBarPage: {
 		links: [{
@@ -35,8 +41,45 @@ const state = {
 
 		},
 		],
-	}
+	},
+	profilePage: {
+		postData: [
+			{ id: 1, message: "Я тут ", likes: 1, },
+			{ id: 2, message: "Я тут ", likes: 1223, },
+			{ id: 3, message: "Я тут ", likes: 13, },
+			{ id: 4, message: "Я тут ", likes: 423, },
+
+		],
+		showProfileText: {
+			texareaValue: '',
+		}
+
+	},
+
 };
+
+
+
+
+
+export const addTextPost = (newText) => {
+	state.profilePage.showProfileText.texareaValue = newText;
+	renderEntireTree(state);
+}
+
+export let showMessageDialog = (newText) => {
+	state.dialogsPage.messageTextDate.texareaValue = newText;
+	renderEntireTree(state);
+}
+
+
+export let addPost = (messagePost) => {
+	let newPost = { id: 5, message: messagePost + " ", likes: 234, };
+	state.profilePage.postData.push(newPost);
+	state.profilePage.showProfileText.texareaValue = '';
+	renderEntireTree(state);
+}
+
 
 
 export default state;

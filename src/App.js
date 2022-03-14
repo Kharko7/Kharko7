@@ -6,27 +6,24 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import Music from "./components/Music/Music"
 import News from "./components/News/News"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { Routes, Route } from 'react-router-dom';
 
 
 const App = (props) => {
-
 	return (
-		<BrowserRouter>
-			<div className="app-wrapper">
-				<Header />
-				<NavBar links={props.state.navBarPage.links} />
-				<div className="app-wrapper-content">
-					<Routes>
-						<Route path="/profile" element={<Profile />} />
-						<Route path="/dialogs/*" element={<Dialogs states={props.state.profilePage} />} />
-						<Route path="/news" element={<News />} />
-						<Route path="/music" element={<Music />} />
-					</Routes>
-				</div>
-			</div >
-		</BrowserRouter>
+
+		<div className="app-wrapper">
+			<Header />
+			<NavBar links={props.state.navBarPage.links} />
+			<div className="app-wrapper-content">
+				<Routes>
+					<Route path="/profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} addTextPost={props.addTextPost} />} />
+					<Route path="/dialogs/*" element={<Dialogs states={props.state.dialogsPage} showMessageDialog={props.showMessageDialog} />} />
+					<Route path="/news" element={<News />} />
+					<Route path="/music" element={<Music />} />
+				</Routes>
+			</div>
+		</div >
 	)
 }
 
