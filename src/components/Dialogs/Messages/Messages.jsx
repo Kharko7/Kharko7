@@ -11,7 +11,6 @@ const Messages = (props) => {
 
 	let showMessageDialog = () => {
 		props.showMessageDialog(getValueText.current.value)
-		console.log(getValueText.current.value);
 
 	}
 	const messagesElements = props.messagesData.map((m) => <div key={m.message} className={classes.message}>{m.message}</div>);
