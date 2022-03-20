@@ -6,11 +6,11 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
 	let getValueText = React.createRef();
 	let addPost = () => {
-		props.addPost(getValueText.current.value)
+		props.dispatch({ type: "ADD-POST", messagePost: getValueText.current.value })
 
 	}
 	let showPostChangetext = () => {
-		props.addTextPost(getValueText.current.value)
+		props.dispatch({ type: "ADD-TEXT-POST", newText: getValueText.current.value })
 	}
 	return (
 		<div className={classes.myPost}>

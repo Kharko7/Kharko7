@@ -11,7 +11,7 @@ import App from './App';
 let renderEntireTree = (state) => {
 	ReactDOM.render(
 		<BrowserRouter>
-			<App state={state} addPost={store.addPost.bind(store)} showMessageDialog={store.showMessageDialog.bind(store)} addTextPost={store.addTextPost.bind(store)} />
+			<App state={state} showMessageDialog={store.showMessageDialog.bind(store)} dispatch={store.dispatch.bind(store)} />
 		</BrowserRouter>,
 		document.getElementById('root')
 	);

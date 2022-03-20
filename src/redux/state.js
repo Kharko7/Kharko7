@@ -65,7 +65,7 @@ let store = {
 	getState() {
 		return this._state;
 	},
-	addTextPost(newText) {
+	_addTextPost(newText) {
 		this._state.profilePage.showProfileText.texareaValue = newText;
 		this._renderEntireTree(this._state);
 	},
@@ -75,7 +75,7 @@ let store = {
 		this._renderEntireTree(this._state)
 	},
 
-	addPost(messagePost) {
+	_addPost(messagePost) {
 		let newPost = { id: 5, message: messagePost + " ", likes: 234, };
 		this._state.profilePage.postData.push(newPost);
 		this._state.profilePage.showProfileText.texareaValue = '';
@@ -85,7 +85,19 @@ let store = {
 	subscribe(observe) {
 		this._renderEntireTree = observe;
 	},
+
+	dispatch(action) {
+		if (action.type === "ADD-POST") {
+			this._addPost(action.messagePost)
+		};
+		if (action.type === "ADD-TEXT-POST") {
+			this._addTextPost(action.newPost)
+		};
+
+	},
 }
+
+
 
 export default store;
 
