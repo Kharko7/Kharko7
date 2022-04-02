@@ -9,7 +9,7 @@ const Dialogs = (props) => {
 	return (
 		<div className={classes.dialogs}>
 			<DialogsElements dialogsData={props.states.dialogsData} />
-			<Messages messagesData={props.states.messagesData} messageTextDate={props.states.messageTextDate} showMessageDialog={props.showMessageDialog} />
+			<Messages dispatch={props.dispatch} messagesData={props.states.messagesData} messageTextDate={props.states.messageTextDate} showMessageDialog={props.showMessageDialog} />
 		</div>
 	)
 }

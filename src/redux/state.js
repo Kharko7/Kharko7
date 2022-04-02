@@ -1,5 +1,6 @@
 
 
+
 let store = {
 	_state: {
 		dialogsPage: {
@@ -38,6 +39,15 @@ let store = {
 				to: "/music",
 				content: 'Music',
 
+			}, {
+				to: "/users",
+				content: 'Users',
+
+			},
+			{
+				to: "/TrainingRedux",
+				content: 'Training',
+
 			},
 			],
 		},
@@ -56,30 +66,15 @@ let store = {
 		},
 
 	},
-
 	_renderEntireTree() {
 		console.log("State change");
-
 	},
-
 	getState() {
 		return this._state;
 	},
-	_addTextPost(newText) {
-		this._state.profilePage.showProfileText.texareaValue = newText;
-		this._renderEntireTree(this._state);
-	},
-
 	showMessageDialog(newText) {
 		this._state.dialogsPage.messageTextDate.texareaValue = newText;
 		this._renderEntireTree(this._state)
-	},
-
-	_addPost(messagePost) {
-		let newPost = { id: 5, message: messagePost + " ", likes: 234, };
-		this._state.profilePage.postData.push(newPost);
-		this._state.profilePage.showProfileText.texareaValue = '';
-		this._renderEntireTree(this._state);
 	},
 
 	subscribe(observe) {
@@ -87,19 +82,31 @@ let store = {
 	},
 
 	dispatch(action) {
-		if (action.type === "ADD-POST") {
-			this._addPost(action.messagePost)
-		};
-		if (action.type === "ADD-TEXT-POST") {
-			this._addTextPost(action.newPost)
-		};
-
+		this._state.profilePage = profileReducer(this._state.profilePage, action)
+		this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+		this._renderEntireTree(this._state)
 	},
 }
-
-
-
 export default store;
+
+
+
+
+
+
+
+
+
+
+
+// export const updaeNewPost = (getValueText) => {
+// 	return {
+// 		type: "ADD-TEXT-POST",
+// 		newPost: getValueText.current.value
+// 	}
+// }
+
+
 
 
 ////////////////////функція яка відображає текст в TEXAREA в profile//////////////////////////////////////

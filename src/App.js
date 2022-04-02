@@ -7,6 +7,8 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Music from "./components/Music/Music"
 import News from "./components/News/News"
 import { Routes, Route } from 'react-router-dom';
+import Users from './components/Users/Users';
+import TrainingRedux from './components/Training-Redux/TrainingRedux';
 
 
 const App = (props) => {
@@ -14,13 +16,15 @@ const App = (props) => {
 
 		<div className="app-wrapper">
 			<Header />
-			<NavBar links={props.state.navBarPage.links} />
+			<NavBar />
 			<div className="app-wrapper-content">
 				<Routes>
-					<Route path="/profile" element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-					<Route path="/dialogs/*" element={<Dialogs states={props.state.dialogsPage} showMessageDialog={props.showMessageDialog} />} />
+					<Route path="/profile" element={<Profile profilePage={props.state.profileReducer} dispatch={props.dispatch} />} />
+					<Route path="/dialogs/*" element={<Dialogs states={props.state.dialogsPage} dispatch={props.dispatch} showMessageDialog={props.showMessageDialog} />} />
 					<Route path="/news" element={<News />} />
 					<Route path="/music" element={<Music />} />
+					<Route path="/users" element={<Users />} />
+					<Route path="/trainingRedux" element={<TrainingRedux />} />
 				</Routes>
 			</div>
 		</div >

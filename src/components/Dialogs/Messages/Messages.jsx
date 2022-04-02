@@ -1,12 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { addMessageActionCreatior } from '../../../redux/dialogs-reduce';
 import classes from "./Messages.module.css"
 
 
 
 const Messages = (props) => {
 	let getValueText = React.createRef();
+	let dispatchs = useDispatch
 	let showMessage = () => {
-		console.log(getValueText.current.value)
+		props.dispatch(addMessageActionCreatior(getValueText))
 	}
 
 	let showMessageDialog = () => {

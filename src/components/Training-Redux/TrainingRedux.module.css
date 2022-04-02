@@ -1,0 +1,18 @@
+.list {
+  padding: 20px;
+}
+.list li {
+  font-size: 24px;
+  font-family: Helvetica;
+}
+.list li span {
+  color: rgba(255, 0, 0, 0.979);
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: Helvetica;
+}
+.list li img {
+  border-radius: 50%;
+  width: 130px;
+}
